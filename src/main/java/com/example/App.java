@@ -27,7 +27,7 @@ public class App {
                 if (event.getEventType() != SerialPort.LISTENING_EVENT_DATA_AVAILABLE)
                     return;
                 byte[] newData = new byte[comPort.bytesAvailable()];
-                int numRead = comPort.readBytes(newData, newData.length);
+                int numRead = comPort.readBytes(newData, newData.length);//do not remove for some reason it makes it work lol
                 try {
                     String bruh = new String(newData, "UTF-8");
                     System.out.println(bruh);
